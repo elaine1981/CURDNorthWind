@@ -1,0 +1,103 @@
+﻿@model WebNorthWind.ViewModels.ProductsView
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>產品維護</h3>
+@using (Html.BeginForm("Index", "Products", FormMethod.Get)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Search, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Search, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Search, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="搜尋" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<table border="1">
+    <tr>
+        <td>ProductID</td>
+        <td>ProductName</td>
+        <td>SupplierID</td>
+        <td>CategoryID</td>
+        <td>QuantityPerUnit</td>
+        <td>UnitPrice</td>
+        <td>UnitsInStock</td>
+        <td>UnitsOnOrder</td>
+        <td>ReorderLevel</td>
+        <td>Discontinued</td>
+        <td></td>
+    </tr>
+    @if (!Model.DataList.Count.Equals(0))
+    {
+        foreach (var item in Model.DataList)
+        {
+            <tr>
+                <td style="white-space:nowrap">
+                    @item.ProductID
+                </td>
+                <td style="white-space:nowrap">
+                    @item.ProductName
+                </td>
+                <td style="white-space:nowrap">
+                    @item.SupplierID
+                </td>
+                <td style="white-space:nowrap">
+                    @item.CategoryID
+                </td>
+                <td style="white-space:nowrap">
+                    @item.QuantityPerUnit
+                </td>
+                <td style="white-space:nowrap">
+                    @item.UnitPrice
+                </td>
+                <td style="white-space:nowrap">
+                    @item.UnitsInStock
+                </td>
+                <td style="white-space:nowrap">
+                    @item.UnitsOnOrder
+                </td>
+                <td style="white-space:nowrap">
+                    @item.ReorderLevel
+                </td>
+                <td style="white-space:nowrap">
+                    @item.Discontinued
+                </td>
+                <td style="white-space:nowrap">
+                    @Html.ActionLink("修改", "Edit", new { Id = item.ProductID })
+                    @Html.ActionLink("刪除", "Delete", new { Id = item.ProductID })
+                </td>
+            </tr>
+        }
+    }
+    @*如果資料庫中為零筆記錄，則印出"資料庫內查無資料"*@
+    else
+    {
+        <tr>
+            <td colspan="10">
+                資料庫內查無資料
+            </td>
+        </tr>
+    }
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
