@@ -46,6 +46,6 @@ D:\YungChing\CURDNorthWind\CURDNorthWind\WebNorthWind\bin\zh-Hant\System.Web.Web
 D:\YungChing\CURDNorthWind\CURDNorthWind\WebNorthWind\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
 D:\YungChing\CURDNorthWind\CURDNorthWind\WebNorthWind\bin\zh-Hant\System.Web.Helpers.resources.dll
 D:\YungChing\CURDNorthWind\CURDNorthWind\WebNorthWind\bin\zh-Hant\System.Web.Mvc.resources.dll
+D:\YungChing\CURDNorthWind\CURDNorthWind\WebNorthWind\obj\Debug\WebNorthWind.csprojResolveAssemblyReference.cache
 D:\YungChing\CURDNorthWind\CURDNorthWind\WebNorthWind\obj\Debug\WebNorthWind.dll
 D:\YungChing\CURDNorthWind\CURDNorthWind\WebNorthWind\obj\Debug\WebNorthWind.pdb
-D:\YungChing\CURDNorthWind\CURDNorthWind\WebNorthWind\obj\Debug\WebNorthWind.csprojResolveAssemblyReference.cache
